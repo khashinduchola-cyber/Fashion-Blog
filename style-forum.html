@@ -3,60 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title - Fashion Blog</title>
+    <title>Style Forum - FashionBlog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="index.html">👗 FashionBlog</a>
-    <button class="navbar-toggler" type="button" 
-      data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Home</a></li>
+         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="beauty.html">Beauty</a></li>
         <li class="nav-item"><a class="nav-link" href="lookbook.html">Lookbook</a></li>
-        <li class="nav-item"><a class="nav-link" href="shopping.html">Shopping</a></li>
-        <li class="nav-item"><a class="nav-link" href="styleforum.html">Style Forum</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+        <li class="nav-item"><a class="nav-link" href="beauty.html">Beauty</a></li>
+        <li class="nav-item"><a class="nav-link" href="style-forum.html">Style Forum</a></li>
         <li class="nav-item"><a class="nav-link" href="travel-fashion.html">Travel Fashion</a></li>
         <li class="nav-item"><a class="nav-link" href="trends.html">Trends</a></li>
+      </ul>
       </ul>
     </div>
   </div>
 </nav>
 
-    <main class="container mt-5">
-        <h1>Community 👥</h1>
-        <p>Content coming soon.</p>
-    </main>
+<section class="bg-dark text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Style Forum</h1>
+    <p class="lead">Share your style questions and get inspired by the community</p>
+  </div>
+</section>
 
-    <footer class="bg-dark text-white text-center py-4 mt-5">
+<section class="container mt-5">
+  <div class="card shadow p-4">
+    <h4 class="mb-3">💬 Ask a Style Question</h4>
+    <div class="mb-3">
+      <label class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="forumName" placeholder="e.g. StyleLover22">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Question Title</label>
+      <input type="text" class="form-control" id="forumTitle" placeholder="e.g. What to wear to a summer wedding?">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Your Question</label>
+      <textarea class="form-control" id="forumQuestion" rows="3" placeholder="Describe your style question in detail..."></textarea>
+    </div>
+    <button class="btn btn-dark" onclick="submitQuestion()">Post Question</button>
+    <p id="forumMessage" class="mt-2 fw-bold"></p>
+  </div>
+</section>
+
+<section class="container mt-5" id="communitySection">
+  <h3 class="mb-4">Community Questions</h3>
+
+  <div class="card mb-3 shadow">
+    <div class="card-body">
+      <h5>What to wear to a summer wedding?</h5>
+      <small class="text-muted">Posted by StyleLover22 &mdash; June 10, 2026</small>
+      <p class="mt-2">I am attending an outdoor garden wedding next month. Should I go for a floral midi dress or a pastel jumpsuit?</p>
+      
+      <hr>
+      <p class="mb-0"><strong>Top Reply:</strong> Go for the floral midi — it is more wedding-appropriate and breathable for an outdoor setting!</p>
+      <hr>
+      <div class="replies mt-2"></div>
+      <div class="input-group mt-2">
+        <input type="text" class="form-control" placeholder="Write a reply...">
+        <button class="btn btn-dark" onclick="postReply(this)">Reply</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3 shadow">
+    <div class="card-body">
+      <h5>Best shoes for street style?</h5>
+      <small class="text-muted">Posted by TrendyTiff &mdash; June 8, 2026</small>
+      <p class="mt-2">I am looking for versatile shoes that work with both casual and smart outfits. My budget is around $50.</p>
+      
+      <hr>
+      <p class="mb-0"><strong>Top Reply:</strong> White sneakers are your best bet! They go with everything from jeans to dresses.</p>
+      <hr>
+      <div class="replies mt-2"></div>
+      <div class="input-group mt-2">
+        <input type="text" class="form-control" placeholder="Write a reply...">
+        <button class="btn btn-dark" onclick="postReply(this)">Reply</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3 shadow">
+    <div class="card-body">
+      <h5>How to style an oversized blazer?</h5>
+      <small class="text-muted">Posted by FashionForward &mdash; June 5, 2026</small>
+      <p class="mt-2">I bought an oversized camel blazer but I am struggling to style it. Any tips?</p>
+      
+      <hr>
+      <p class="mb-0"><strong>Top Reply:</strong> Try the half-tuck trick with high-waist trousers and add a belt at the waist to define your shape!</p>
+      <hr>
+      <div class="replies mt-2"></div>
+      <div class="input-group mt-2">
+        <input type="text" class="form-control" placeholder="Write a reply...">
+        <button class="btn btn-dark" onclick="postReply(this)">Reply</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3 shadow">
+    <div class="card-body">
+      <h5>Minimalist capsule wardrobe essentials?</h5>
+      <small class="text-muted">Posted by MinimalistMia &mdash; June 1, 2026</small>
+      <p class="mt-2">I want to build a minimalist capsule wardrobe with 20 pieces or less. What are the must-haves?</p>
+      
+      <hr>
+      <p class="mb-0"><strong>Top Reply:</strong> Start with: white tee, black tee, white blouse, dark jeans, black trousers, little black dress, denim jacket, white sneakers, black heels, and a neutral trench coat!</p>
+      <hr>
+      <div class="replies mt-2"></div>
+      <div class="input-group mt-2">
+        <input type="text" class="form-control" placeholder="Write a reply...">
+        <button class="btn btn-dark" onclick="postReply(this)">Reply</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
   <div class="container">
     <p class="mb-1">👗 FashionBlog &copy; 2026</p>
     <p class="mb-1">
       <a href="index.html" class="text-white me-2">Home</a>
       <a href="about.html" class="text-white me-2">About</a>
-      <a href="contact.html" class="text-white">Contact</a>
-      <a href="shopping.html" class="text-white">Shopping</a>
-      <a href="beauty.html" class="text-white">Beauty</a>
+      <a href="contact.html" class="text-white me-2">Contact</a>
+      <a href="lookbook.html" class="text-white me-2">Lookbook</a>
+      <a href="style-forum.html" class="text-white me-2">Style Forum</a>
+      <a href="travel-fashion.html" class="text-white me-2">Travel Fashion</a>
       <a href="trends.html" class="text-white">Trends</a>
-      <a href="lookbook.html" class="text-white">Lookbook</a>
-      <a href="travel-fashion.html" class="text-white">Travel & Fashion</a>
-      <a href="style-forum.html" class="text-white">Style Forum</a>
-
     </p>
-    <p class="mb-0 text-muted">Designed by Tiffany Khashindu</p>
+    <p class="mb-0 text-muted">Designed by Tiffany Khashindu &mdash; BBT2102 Web Application Development</p>
   </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+function submitQuestion() {
+  const name = document.getElementById('forumName').value.trim();
+  const title = document.getElementById('forumTitle').value.trim();
+  const question = document.getElementById('forumQuestion').value.trim();
+  const msg = document.getElementById('forumMessage');
+
+  if (name === '' || title === '' || question === '') {
+    msg.style.color = 'red';
+    msg.textContent = 'Please fill in all fields before posting.';
+    return;
+  }
+
+  msg.style.color = 'green';
+  msg.textContent = 'Your question has been posted successfully!';
+
+  const today = new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+  const card = document.createElement('div');
+  card.classList.add('card', 'mb-3', 'shadow');
+  card.innerHTML = `
+    <div class="card-body">
+      <h5>${title}</h5>
+      <small class="text-muted">Posted by ${name} &mdash; ${today}</small>
+      <p class="mt-2">${question}</p>
+      <hr>
+      <div class="replies mt-2"></div>
+      <div class="input-group mt-2">
+        <input type="text" class="form-control" placeholder="Write a reply...">
+        <button class="btn btn-dark" onclick="postReply(this)">Reply</button>
+      </div>
+    </div>`;
+
+  const communitySection = document.getElementById('communitySection');
+  const firstCard = communitySection.querySelector('.card');
+  communitySection.insertBefore(card, firstCard);
+
+  document.getElementById('forumName').value = '';
+  document.getElementById('forumTitle').value = '';
+  document.getElementById('forumQuestion').value = '';
+}
+
+function postReply(btn) {
+  const input = btn.previousElementSibling;
+  const replyText = input.value.trim();
+
+  if (replyText === '') {
+    alert('Please write a reply first.');
+    return;
+  }
+
+  const repliesDiv = btn.closest('.card-body').querySelector('.replies');
+  const reply = document.createElement('p');
+  reply.classList.add('mt-1');
+  reply.innerHTML = `<strong>Creator Reply:</strong> ${replyText}`;
+  repliesDiv.appendChild(reply);
+
+  input.value = '';
+}
+</script>
 </body>
 </html>
