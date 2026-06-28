@@ -81,3 +81,18 @@ footer a:hover {
   color: #ccc !important;
   text-decoration: underline;
 }
+
+
+/* Badge Styles */
+.badge {
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+
+/* Image Styles */
+img {
+  object-fit: cover;
+}
+
