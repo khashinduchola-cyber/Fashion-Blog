@@ -1,0 +1,9 @@
+/* FashionBlog Stylesheet */
+/* Author: Tiffany Chola */
+/* BBT2102 Web Application Development */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
